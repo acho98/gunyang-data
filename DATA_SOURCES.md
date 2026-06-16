@@ -9,6 +9,7 @@
 | `btc_usd_daily.csv` | 비트코인(BTC/USD) 일별 OHLCV | CryptoDataDownload (Gemini 거래소) | 1행은 메타데이터 → `pd.read_csv(..., skiprows=1)`. **1교시 동기부여 차트용** |
 | `gold_5y.csv` | 금 시세 시계열 (`ds`, `y` 형식) | 강사 수집본 | 1교시 보조 · 4교시 선그래프 예시 |
 | `worldcup_results.csv` | 국제 축구 A매치 결과 **1872–2026** (49,477경기, 한국 1,010경기 포함) | martj42/international_results (GitHub 공개 데이터셋) | 강사 스냅샷본(라이브 데이터 드리프트 방지). **2026 월드컵 진행분 포함 → 미실시 경기는 결측 = 결측 학습 소재.** 컬럼: `date, home_team, away_team, home_score, away_score, tournament, city, country, neutral`. **5교시 캡스톤(풀 파이프라인)용** |
+| `spotify_tracks.csv` | Spotify 트랙 **114,000곡** × 20열 (track_genre 114종, 오디오 피처: danceability/energy/valence/tempo/loudness/acousticness 등, popularity 0~100, duration_ms). BTS 등 K-pop 포함 | maharshipandya/spotify-tracks-dataset (Hugging Face / Kaggle, **BSD 라이선스**) | Spotify Web API 수집본. 한 곡이 여러 장르에 중복 수록(고유 track_id 89,741) → **중복 제거 학습 소재**. **5교시 프로젝트(음악 분석)용.** 주의: 발매연도 컬럼 없음, popularity는 스트리밍 횟수가 아닌 0~100 인기점수 |
 | `BMDOHYEON.ttf` | 한글 폰트 (배민 도현체) | 우아한형제들 — 상업적 이용 무료 폰트 | 모든 차트 한글 깨짐 방지. try/except 폴백으로 사용 |
 | `raw_source/world_happiness_2017.csv` | 행복 보고서 2017 (요인별 컬럼: Economy/Family/Health 등) | World Happiness Report 2017 | **폴백·참고용.** 최신판(OWID)이 점수 중심이라, 요인 상관 설명이 필요하면 보조로 사용 |
 
